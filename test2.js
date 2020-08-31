@@ -13,7 +13,7 @@
                 "BlackCountry": "UA",
                 "SrcID": 2,
                 "CtoBCode": "B",
-                "CtoBRemark": "REDEFINE",
+                "CtoBRemark": "REDEFIN",
                 "CtoBSt": "A"
             }
         }, {
