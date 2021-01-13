@@ -1,0 +1,143 @@
+</div> <!-- Modal -->
+<div class=\"modal fade\" id=\"loader\" role=\"dialog\" align=\"center\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h class=\"modal-title\"></h>
+            </div>
+            <div class=\"modal-body\"><img src=\"https://www.terme-krka.com/themes/tk/images/ajax-loading.gif\" /></div>
+            <div class=\"modal-footer\"></div>
+        </div>
+    </div>
+</div>
+<div id=\"addNewOper\" class=\"modal fade\" role=\"dialog\">
+    <div class=\"modal-dialog\">
+        <!-- Modal content-->
+        <div class=\"modal-content\">
+            <div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                <h4 class=\"modal-title\">Добавление нового оператора</h4>
+            </div>
+            <div class=\"modal-body\">
+                <div class=\"form-group\"><label for=\"newOperLdap\">ЛДАП:</label><input type=\"text\"
+                        class=\"form-control\" id=\"newOperLdap\"></div>
+                <div class=\"form-group\"><label for=\"new_sectors\">Sector:</label><select class=\"form-control
+                        picker-input\" id=\"new_sectors\">
+                        <option></option>
+                        <option>Privat24</option>
+                        <option>General</option>
+                        <option>Corporate</option>
+                        <option>Credit</option>
+                        <option>Deposit</option>
+                        <option>Outsourcing</option>
+                        <option>Liqpay</option>
+                        <option>Supervisor</option>
+                        <option>Online_Alert</option>
+                    </select></div>
+            </div>
+            <div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-success\" data-dismiss=\"modal\"
+                    onClick=\"addNewOper()\">Cохранить</button><button type=\"button\" class=\"btn btn-default\"
+                    data-dismiss=\"modal\">Закрыть</button></div>
+        </div>
+    </div>
+</div>
+<div class=\"modal fade\" id=\"errorChanged\" role=\"dialog\" align=\"center\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h class=\"modal-title\" id=\"errorDescription\"></h>
+            </div>
+            <div class=\"modal-body\"> <img
+                    src=\"https://s.sender.mobi/u/image/2018/2/15/cb17N2ots/26a82589bdaa8686bd237c471829d06d.png\" />
+            </div>
+            <div class=\"modal-footer\"> </div>
+        </div>
+    </div>
+</div>
+<div class=\"modal fade\" id=\"successChanged\" role=\"dialog\" align=\"center\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h class=\"modal-title\" id=\"successDescription\"></h>
+            </div>
+            <div class=\"modal-body\"> <img src=\"https://s.sender.mobi/u/image/2018/2/15/qk16sozK6/success.png\" />
+            </div>
+            <div class=\"modal-footer\"> </div>
+        </div>
+    </div>
+</div>
+<div class=\"modal fade\" id=\"reworkStatus\" role=\"dialog\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                <h4 class=\"modal-title\">Смена статуса оператора</h4>
+            </div>
+            <div class=\"modal-body\">
+                <p>Вы уверены, что хотите сменить статус ? </p>
+            </div>
+            <div class=\"modal-footer\"> <button type=\"button\" class=\"btn btn-success\" data-dismiss=\"modal\"
+                    onclick=\"chOnline2()\">Да</button> <button type=\"button\" class=\"btn btn-danger\"
+                    data-dismiss=\"modal\">Отмена</button> </div>
+        </div>
+    </div>
+</div>
+<div class=\"modal fade\" id=\"deleteOperatorTrue\" role=\"dialog\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                <h4 class=\"modal-title\">Удаление оператора:</h4>
+                <h4 class=\"modal-title\" id=\"deleteOper\"></h4>
+            </div>
+            <div class=\"modal-body\">
+                <p>Вы уверены, что хотите удалить оператора ? </p>
+            </div>
+            <div class=\"modal-footer\"> <button type=\"button\" class=\"btn btn-success\" data-dismiss=\"modal\"
+                    onclick=\"deleteOperator2()\">Да</button> <button type=\"button\" class=\"btn btn-danger\"
+                    data-dismiss=\"modal\">Отмена</button> </div>
+        </div>
+    </div>
+</div>
+<div class=\"modal fade\" id=\"reworkOper\" role=\"dialog\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                <h4 class=\"modal-title\">Редактирование оператора</h4>
+            </div>
+            <div class=\"modal-body\">
+                <div class=\"form-group\"> <label for=\"newFio\">ФИО:</label> <input type=\"text\"
+                        class=\"form-control\" id=\"newFio\" readonly> </div>
+                <div class=\"form-group\"> <label for=\"newLdap\">ЛДАП:</label> <input type=\"text\"
+                        class=\"form-control\" id=\"newLdap\"> </div>
+                <div class=\"form-group\"> <label for=\"newSector\">Сектор:</label> <select class=\"form-control\"
+                        id=\"newSector\"> </select> </div>
+                <div class=\"form-group\"> <label for=\"newMail\">ПОЧТА:</label> <input type=\"text\"
+                        class=\"form-control\" id=\"newMail\"> </div>
+                <div class=\"form-group\"> <label for=\"newPhone\">ТЕЛЕФОН:</label> <input type=\"text\"
+                        class=\"form-control\" id=\"newPhone\"> </div>
+                <div class=\"form-group\"> <label for=\"newSuper\">Супервизор:</label> <select class=\"form-control\"
+                        id=\"newSuper\"> </select> </div> \n\<div class=\"form-group\"> <label
+                        for=\"newSensei\">Сенсеи:</label> <select class=\"form-control\" id=\"newSensei\"> </select>
+                </div> \n\
+            </div>
+            <div class=\"modal-footer\"> <button type=\"button\" class=\"btn btn-success\" data-dismiss=\"modal\"
+                    onClick=\"reworkOperator2()\">Сохранить</button> <button type=\"button\" class=\"btn btn-danger\"
+                    data-dismiss=\"modal\">Отмена</button> </div>
+        </div>
+    </div>
+</div> \n\<div class=\"modal fade\" id=\"reworkSkills\" role=\"dialog\" align=\"center\">
+    <div class=\"modal-dialog\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                <h4 class=\"modal-title\">Редактирование скилов оператора : </h4>
+                <h4 id=\"ldapReworkSkillsOper\"></h4>
+            </div>
+            <div class=\"modal-body\" id=\"reworkSkillsPallet\" align=\"center\"> </div>
+            <div class=\"modal-footer\"> <button type=\"button\" class=\"btn btn-success\" data-dismiss=\"modal\"
+                    onClick=\"chengeSkills2()\">Сохранить</button> <button type=\"button\" class=\"btn btn-danger\"
+                    data-dismiss=\"modal\">Отмена</button> </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script type=\"text/javascript\" src=\"https://chat-online-test.amazon.loc/getScript\"> </script> </html>

@@ -1,0 +1,121 @@
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <link rel="icon" href="/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#000000">
+      <meta name="description" content="Web site created using create-react-app">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="https://chat-online-test.amazon.loc/operator/detail/style.css" >
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+      
+      
+      <title>{{payload.raiting.ldap}}</title>
+   </head>
+   <body class="" style="">
+
+      <div id="root">
+         <div>
+            <div class="header-head">
+               <div class="container"><a href="#">The Best Dashboard</a></div>
+            </div>
+            <div class="header-body">
+               <div class="container header-operator-block">
+                  <div class="col-lg-3 text-center d-inline-block image-header-block"><img src="{{payload.raiting.photo}}" class="img-thumbnail header-operator-img" alt="Cinque"></div>
+                  <div class="col-lg-8 d-inline-block header-operator-info">
+                     <div class="col-lg-12 ">
+                        <h3>{{payload.raiting.fio}}</h3>
+                        <hr>
+                        <p>{{payload.raiting.ldap}} | {{payload.raiting.sector}}</p>
+                        <p>{{payload.raiting.supervisor}}</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="header-footer"></div>
+            <div class="container" style="margin-top: 20px;">
+                <div class="row">
+                   <div class="col-lg-9 d-inline-block" style="border-bottom: 5px solid rgb(0, 191, 255);">
+                      <h5>Рейтинг c {{payload.start}} по {{payload.end}}<span class="fa fa-calendar" aria-hidden="true">:</span> </h5>
+                   </div>
+                   <div class="col-lg-3 d-inline-block" style="border-bottom: 5px solid rgb(50, 205, 50);">
+                      <h5>Зарплата ({{payload.zp.tariff}}):</h5>
+                   </div>
+               </div>
+               <div class="row all-rating-stats" style="width: 100%;">
+                  <div class="col-lg-2 d-inline-block text-center rating-stat-block" id="procentYes">
+                     <h5>Удовлет.:</h5>
+                     <p><span style="color: {{payload.colors.procentYes}};">{{payload.raiting.procentYes}}</span> %</p>
+                     <p>Цель: <span>{{payload.target.procentYes}}</span></p>
+                     <hr>
+                     <p>Рейтинг: <span>{{payload.raiting.procentYesRaiting}}</span>%</p>
+                  </div>
+                  <div class="col-lg-2 d-inline-block text-center  rating-stat-block" id="transfer">
+                     <h5>Тишина:</h5>
+                     <p><span style="color: {{payload.colors.procentSilence}};">{{payload.raiting.procentSilence}}</span> %</p>
+                     <p>Цель: <span>{{payload.target.procentSilence}}</span></p>
+                     <hr>
+                     <p>Рейтинг: <span>{{payload.raiting.procentSilenceRaiting}}</span>%</p>
+                  </div>
+                  <div class="col-lg-2 d-inline-block text-center  rating-stat-block" id="silence">
+                     <h5>ВОК:</h5>
+                     <p><span style="color: {{payload.colors.wok}};">{{payload.raiting.wok}}</span> </p>
+                     <p>Цель: <span>{{payload.target.wok}}</span> </p>
+                     <hr>
+                     <p>Рейтинг: <span>{{payload.raiting.wokRaiting}}</span>%</p>
+                  </div>
+                  <div class="col-lg-2 d-inline-block text-center  rating-stat-block " align="center">
+                     <div class="col-lg-10 offset-1 result-raiting-block" style="border: 5px solid {{payload.positionColor.border}}; background-color:{{payload.positionColor.background}};">
+                         <h5>Место:</h5>
+                         <h5>{{payload.raiting.position}}</h5>
+                         <p>Из: <span>{{payload.raiting.allCount}}</span> </p>
+                         <hr>
+                         <p>Итог: <b><span>{{payload.raiting.final}}</span></b></p>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 offset-1 zp-stat-block d-inline-block" >
+                     <p><b>Ставка:</b> {{payload.zp.clearStavka}} грн.</p>
+                     <p><b>Бонусы:</b> {{payload.zp.zpClear}} грн.</p>
+                     <p><b>Всего:</b> {{payload.zp.allZpClear}} грн. <span class="badge badge-secondary">{{payload.zp.zpKpdClear}} грн. в час</span></p>
+                     <p>*ЗП указана чистыми</p>
+                     <hr>
+                     <p><b>Идеи:</b> {{payload.zp.ideasPay}} грн.</p>
+                     <p><b>Благодарности:</b> {{payload.zp.thanksPay}} грн.</p>
+                     <p><b>Рекорды:</b> {{payload.zp.allRecords}} грн.</p>
+                     <p><b>Юмарк:</b> {{payload.zp.umarkPay}} грн. </p>
+                     <p>*информация в этом блоке актуальна <b>ТОЛЬКО</b> при запросе за полный месяц (с 1 числа) </p>
+                     <hr>
+                     <p><b>Отработано:</b> {{payload.zp.hours.hours}} ч.</p>
+                     <p><b>Время в онлайн:</b> {{payload.statuses_time.online_hours}} ч.</p>
+                     <p><b>Экстренная смена:</b> {{payload.zp.hours.extra_hours}} ч.</p>
+                     <p><b>КПД:</b> {{payload.zp.kpd}} д./ч.</p>
+                  </div>
+
+                  
+                  <!-- тест -->
+                  <div class="col-lg-8 d-inline-block">
+                    <div class="col-lg-12 add-info">
+                    <p><a href="http://chat-bankir-test.amazon.loc/dashboards/wokoper" target="_blank">Показатели рейтинга детально</a></p>
+                    </div>
+                  </div> 
+                  
+                  <div class="col-lg-8 d-inline-block">
+                     <div class="col-lg-12 add-info" style="border-bottom: 5px solid rgb(186, 85, 211);">
+                        <h5>Другая информация<span class="fa fa-user" aria-hidden="true">:</span></h5>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-3 d-inline-block"><b> Всего:</b> {{payload.zp.myDialogs}} <br><b> Yes:</b> {{payload.zp.myDialogsYes}}<b> No:</b> {{payload.zp.myDialogsNo}}</div>
+                         <div class="col-lg-3 d-inline-block"><b> Трансферы:</b> {{payload.zp.counttransfer}}<br><b> Yes:</b> {{payload.zp.counttransferyes}}<b> No:</b> {{payload.zp.counttransferno}}</div>
+                         <div class="col-lg-3 d-inline-block"><b> Ночные:</b> {{payload.zp.countnights}}<br><b> Yes:</b> {{payload.zp.countnightsyes}}<b> No:</b> {{payload.zp.countnightsno}}</div>
+                         <div class="col-lg-3 d-inline-block"><b> Пустые:</b> {{payload.zp.countempty}}<br><b> Yes:</b> {{payload.zp.countemptyyes}}<b> No:</b> {{payload.zp.countemptyno}}</div> 
+                         <!--<div class="col-lg-3 d-inline-block"><b> Все диалоги без тематики:</b> {{payload.zp.countwithouttheme}}<br><b> Yes:</b> {{payload.zp.countwithoutthemeyes}}<b> No:</b> {{payload.zp.countwithoutthemeno}}</div> -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
